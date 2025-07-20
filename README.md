@@ -1,12 +1,42 @@
-# React + Vite
+# 文字替換工具
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一個簡單易用的網頁工具，用於快速替換文字內容，支援自動複製結果、忽略大小寫和特殊字元 `%s` 替換，適合日常文字處理需求。
 
-Currently, two official plugins are available:
+## 功能特色
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **文字替換**：在輸入內容中查找指定文字並替換為新內容。
+- **自動複製**：替換結果自動複製到剪貼簿，方便直接貼上使用。
+- **忽略大小寫**：可選擇忽略大小寫進行文字查找。
+- **使用 %s**：快速將查找文字設為 `%s`，適合格式化文字處理。
+- **清空所有**：一鍵清空所有輸入和設定，重新開始。
 
-## Expanding the ESLint configuration
+## 使用方法
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **輸入內容**：
+   - 在「內容」文字框輸入原始文字（支援多行）。
+2. **設定查找與替換**：
+   - 在「Replace this」輸入要查找的文字。
+   - 可勾選「使用 %s」快速將查找文字設為 `%s`（取消勾選若為 `%s` 則清空）。
+   - 在「With this」輸入要替換成的文字。
+3. **忽略大小寫**：
+   - 勾選「忽略大小寫」以忽略查找時的大小寫差異（例如「World」可匹配「world」）。
+4. **查看與複製結果**：
+   - 結果即時顯示在「結果」區域，自動複製到剪貼簿。
+   - 點擊「複製結果」按鈕再次複製，顯示「已複製到剪貼簿！」提示（持續 2 秒）。
+5. **清空輸入**：
+   - 點擊「清空所有」按鈕，清空所有輸入框和 checkbox 設定。
+
+## 範例
+
+- **內容**：`歡迎來到 %s！World 很美好。`
+- **Replace this**：勾選「使用 %s」，自動設為 `%s`（或手動輸入「World」）。
+- **With this**：輸入「宇宙」。
+- **忽略大小寫**：勾選。
+- **結果**：`歡迎來到 宇宙！宇宙 很美好。`（自動複製）。
+- **操作**：
+  - 點擊「複製結果」再次複製。
+  - 點擊「清空所有」重置所有輸入。
+
+## 聯繫
+
+如有建議或問題，歡迎在 GitHub 提交 Issue 或聯繫作者！
