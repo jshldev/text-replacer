@@ -103,19 +103,22 @@ textarea {
   color: #2c3e50;
 }
 
-.result p {
+.result-text {
   background-color: #fff;
   padding: 1rem;
   border-radius: 4px;
   border: 1px solid #eee;
   word-break: break-word;
   min-height: 60px;
+  margin: 0;
+  white-space: pre-wrap; /* 保留換行和空白 */
+  font-family: inherit; /* 與頁面字體一致 */
 }
 
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* 按鈕間距 */
+  gap: 1rem;
   margin: 0.5rem auto 0;
 }
 
@@ -136,7 +139,7 @@ textarea {
 
 .clear-button {
   padding: 0.75rem 1.5rem;
-  background-color: #e74c3c; /* 紅色主題 */
+  background-color: #e74c3c;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -229,7 +232,7 @@ textarea {
 /* 響應式設計 - 小螢幕（如 iPhone SE） */
 @media (max-width: 400px) {
   .container {
-    width: 80%; /* 小螢幕佔 80% 寬度 */
+    width: 80%;
     padding: 0 0.4rem;
     margin: 0.5rem 0;
   }

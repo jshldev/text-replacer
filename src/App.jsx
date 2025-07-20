@@ -9,27 +9,22 @@ function App() {
   const [usePercentS, setUsePercentS] = useState(false);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
 
-  // 處理 Replace this input 變化
   const handleReplaceThisChange = (e) => {
     setReplaceThis(e.target.value);
   };
 
-  // 處理 With this input 變化
   const handleWithThisChange = (e) => {
     setWithThis(e.target.value);
   };
 
-  // 處理 textarea 變化
   const handleTextareaChange = (e) => {
     setTextareaContent(e.target.value);
   };
 
-  // 處理忽略大小寫 checkbox 變化
   const handleIgnoreCaseChange = (e) => {
     setIgnoreCase(e.target.checked);
   };
 
-  // 處理使用 %s checkbox 變化
   const handleUsePercentSChange = (e) => {
     setUsePercentS(e.target.checked);
     if (e.target.checked) {
@@ -39,7 +34,6 @@ function App() {
     }
   };
 
-  // 清空所有輸入
   const handleClearAll = () => {
     setTextareaContent("");
     setReplaceThis("");
@@ -48,7 +42,6 @@ function App() {
     setIgnoreCase(false);
   };
 
-  // 替換邏輯
   const resultText = replaceThis
     ? textareaContent.replace(
         new RegExp(
@@ -59,7 +52,6 @@ function App() {
       )
     : textareaContent || "[請輸入內容]";
 
-  // 自動複製到剪貼簿
   useEffect(() => {
     if (resultText && resultText !== "[請輸入內容]") {
       navigator.clipboard
@@ -68,7 +60,6 @@ function App() {
     }
   }, [resultText]);
 
-  // 手動複製按鈕
   const handleCopyClick = () => {
     navigator.clipboard
       .writeText(resultText)
@@ -139,7 +130,8 @@ function App() {
       </div>
       <div className="result">
         <h2>結果</h2>
-        <p>{resultText}</p>
+        <pre className="result-text">{resultText}</pre>{" "}
+        {/* 改用 pre 保留格式 */}
         <div className="button-group">
           <button className="copy-button" onClick={handleCopyClick}>
             複製結果
